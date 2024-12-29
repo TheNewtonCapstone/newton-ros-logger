@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>newton_ros_logger</name>
+  <version>0.0.0</version>
+  <description>A ROS2 logger for the Newton project</description>
+  <maintainer email="the.newton.capstone@gmail.com">TheNewtonCapstone</maintainer>
+  <license>GPL-3.0-only</license>
+
+  <exec_depend>newton_ros</exec_depend>
+  <exec_depend>newton_sim_ros</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
