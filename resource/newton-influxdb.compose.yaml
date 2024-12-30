@@ -1,0 +1,30 @@
+# compose.yaml
+services:
+  newton-influxdb:
+    image: influxdb:2
+    ports:
+      - 8086:8086
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME_FILE: /run/secrets/influxdb-admin-username
+      DOCKER_INFLUXDB_INIT_PASSWORD_FILE: /run/secrets/influxdb-admin-password
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN_FILE: /run/secrets/influxdb-admin-token
+      DOCKER_INFLUXDB_INIT_ORG: docs
+      DOCKER_INFLUXDB_INIT_BUCKET: home
+    secrets:
+      - influxdb-admin-username
+      - influxdb-admin-password
+      - influxdb-admin-token
+    volumes:
+      - newton-influxdb-data:/var/lib/influxdb2
+      - newton-influxdb-config:/etc/influxdb2
+secrets:
+  influxdb-admin-username:
+    file: secrets/.env.newton-influxdb-admin-username
+  influxdb-admin-password:
+    file: secrets/.env.newton-influxdb-admin-password
+  influxdb-admin-token:
+    file: secrets/.env.newton-influxdb-admin-token
+volumes:
+  newton-influxdb-data:
+  newton-influxdb-config:

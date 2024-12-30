@@ -4,27 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a83d78-8773-4f65-99e0-b21ce2ac8450" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/newton-ros-logger.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deps/newton_ros" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deps/newton_sim_ros" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launch/main.launch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newton_ros_logger/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newton_ros_logger/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource/newton_ros_logger" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/build_pkgs_conda.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/source_pkgs.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+    <list default="true" id="e2a83d78-8773-4f65-99e0-b21ce2ac8450" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environment.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/launch/main_with_docker.launch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newton_ros_logger/db/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newton_ros_logger/db/influxdb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newton_ros_logger/nodes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newton_ros_logger/nodes/database_sink.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newton_ros_logger/types.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newton_ros_logger/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/.env.newton-influxdb-admin-password" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/.env.newton-influxdb-admin-token" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/.env.newton-influxdb-admin-username" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/newton-influxdb.compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launch/main.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/launch/main.launch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newton_ros_logger/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/newton_ros_logger/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/package.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/source_pkgs.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/source_pkgs.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +42,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AugustDG"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:TheNewtonCapstone/newton-ros-logger.git",
+    "accountId": "5563b6ff-9c3f-4bb4-807d-7e3eafb5fcd9"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2qtv2Me7SLX8V90cgJOGJo3T8WG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,13 +76,15 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/launch" />
+      <recent name="$PROJECT_DIR$/resource" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts" />
@@ -129,7 +145,17 @@
       <workItem from="1735504097602" duration="139000" />
       <workItem from="1735504240443" duration="103000" />
       <workItem from="1735504348074" duration="131000" />
+      <workItem from="1735504483792" duration="8073000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1735504526640</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735504526640</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +166,8 @@
       <path value="$PROJECT_DIR$/deps/newton_ros" />
       <path value="$PROJECT_DIR$/deps/newton_sim_ros" />
     </ignored-roots>
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/newton_ros_logger$newton_ros_logger.coverage" NAME="newton-ros-logger Coverage Results" MODIFIED="1735495064560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/newton-ros-logger" />

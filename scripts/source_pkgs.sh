@@ -10,4 +10,4 @@ if [ -z "$ROS_DISTRO" ]; then
 fi
 
 # Source ROS2 packages
-source install/local_setup.bash
+source install/setup.bash

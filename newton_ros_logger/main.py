@@ -1,37 +1,31 @@
 import rclpy
-from rclpy.node import Node
+from influxdb_client.client.write_api import SYNCHRONOUS
+from newton_ros.msg import ImuMsg, ContactsMsg
+from newton_sim_ros.msg import SimulationImuMsg, SimulationContactsMsg
 
-from std_msgs.msg import String
-
-
-class MinimalPublisher(Node):
-
-    def __init__(self):
-        super().__init__('minimal_publisher')
-        self.publisher_ = self.create_publisher(String, 'topic', 10)
-        timer_period = 0.5  # seconds
-        self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.i = 0
-
-    def timer_callback(self):
-        msg = String()
-        msg.data = 'Hello World: %d' % self.i
-        self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.data)
-        self.i += 1
+from .db import InfluxDbSettings
+from .nodes import DatabaseSinkNode
 
 
-def main(args=None):
-    rclpy.init(args=args)
+def main():
+    rclpy.init()
 
-    minimal_publisher = MinimalPublisher()
+    connection_settings = InfluxDbSettings(
+        organization="newton",
+        token="T84_NroliJCt8BeotYnhryx4mK5YQKlebNolOcfY3SxNlzlKx1vFLp6zl4W-aRtK23MdYEs91GTY3We9CD3l2w==",
+        url="http://localhost:8086",
+        write_options=SYNCHRONOUS,
+    )
+    sink = DatabaseSinkNode(connection_settings, {
+        "/sim/imu": SimulationImuMsg,
+        "/imu": ImuMsg,
+        "/sim/contact": SimulationContactsMsg,
+        "/contact": ContactsMsg,
+    })
 
-    rclpy.spin(minimal_publisher)
+    rclpy.spin(sink)
 
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
-    minimal_publisher.destroy_node()
+    sink.destroy_node()
     rclpy.shutdown()
 
 
